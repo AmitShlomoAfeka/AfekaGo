@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">AfekaGo</string>
+    <string name="register_title">הרשמה ל-AfekaGo</string>
+    <string name="hint_email">אימייל</string>
+    <string name="hint_password">סיסמה</string>
+    <string name="btn_register">צור חשבון</string>
+    <string name="btn_back_to_login">כבר יש לך חשבון? התחבר</string>
+    <string name="open_menu">Open menu</string>
+    <string name="notifications">Notifications</string>
+    <string name="map_view_showing_user_s_location">Map view showing user\'s location</string>
+    <string name="back_button">back button</string>
+    <string name="settings">settings</string>
+    <string name="profile_picture">profile picture</string>
+    <string name="settings_illustration">settings illustration</string>
+    <string name="user_name">user name</string>
+    <string name="phone_number">phone number</string>
+    <string name="current_balance">current balance</string>
+    <string name="logout">logout</string>
+    <string name="add_new_trip">Add New Trip</string>
+    <string name="select_trip_date">Select Trip Date</string>
+    <string name="select_trip_time">Select Trip Time</string>
+    <string name="enter_destination">Enter Destination</string>
+    <string name="add_trip">Add Trip</string>
+    <string name="trip_list_desc">List of planned trips</string>
+    <string name="back">back</string>
+    <string name="choose_payment_method">choose payment method</string>
+    <string name="map_image">map image</string>
+    <string name="credit_card">credit card</string>
+    <string name="bit">bit</string>
+    <string name="cash">cash</string>
+    <string name="calendar">ic calendar</string>
+    <string name="driver">driver</string>
+    <string name="radius_label">Radius: %1$d km</string>
+    <string name="passengers_label">Passengers: %1$d</string>
+    <string name="default_user_name">Guest</string>
+    <string name="default_phone_number">Unknown</string>
+    <string name="error_loading_data">Failed to load data</string>
+    <string name="finish_ride">Finish Ride</string>
+    <string name="אימייל">אימייל</string>
+    <string name="סיסמה">סיסמה</string>
+    <string name="שם_מלא">שם מלא</string>
+    <string name="מספר_טלפון">מספר טלפון</string>
+    <string name="Driver">Driver</string>
+    <string name="Join">Join</string>
+    <string name="request_ride">Request Ride</string>
+    <string name="type">Type</string>
+    <string name="time">Time</string>
+    <string name="day">Day</string>
+    <string-array name="days_of_week">
+        <item>ראשון</item>
+        <item>שני</item>
+        <item>שלישי</item>
+        <item>רביעי</item>
+        <item>חמישי</item>
+        <item>שישי</item>
+        <item>שבת</item>
+    </string-array>
+</resources>

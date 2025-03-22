@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".RegisterActivity">
+
+    <!-- רקע ירוק לכותרת -->
+    <View
+        android:id="@+id/titleBackground"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/green_light"
+        android:layout_alignParentTop="true"/>
+
+    <!-- כותרת גדולה בצבע שחור -->
+    <TextView
+        android:id="@+id/tvTitleRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_title"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:layout_below="@id/titleBackground"/>
+
+    <!-- שדה אימייל -->
+    <EditText
+        android:id="@+id/etRegisterEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/אימייל"
+        android:inputType="textEmailAddress"
+        android:autofillHints="email"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="12dp"
+        android:layout_below="@id/tvTitleRegister"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- שדה שם מלא -->
+    <EditText
+        android:id="@+id/etRegisterName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/שם_מלא"
+        android:inputType="textPersonName"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="12dp"
+        android:layout_below="@id/etRegisterEmail"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- שדה טלפון -->
+    <EditText
+        android:id="@+id/etRegisterPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/מספר_טלפון"
+        android:inputType="phone"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="12dp"
+        android:layout_below="@id/etRegisterName"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- שדה סיסמה -->
+    <EditText
+        android:id="@+id/etRegisterPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/סיסמה"
+        android:inputType="textPassword"
+        android:autofillHints="password"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="12dp"
+        android:layout_below="@id/etRegisterPhone"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- כפתור הרשמה -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegisterUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_register"
+        style="@style/Widget.MaterialComponents.Button"
+        android:backgroundTint="@color/green_light"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/etRegisterPassword"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- כפתור חזרה למסך התחברות -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBackToLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_back_to_login"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:textColor="@color/green_light"
+        android:strokeColor="@color/green_light"
+        android:backgroundTint="@android:color/transparent"
+        android:layout_below="@id/btnRegisterUser"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+</RelativeLayout>

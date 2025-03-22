@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "379160539819",
+    "project_id": "afekago",
+    "storage_bucket": "afekago.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379160539819:android:0bad44cb8f1b6a74d5bdee",
+        "android_client_info": {
+          "package_name": "com.example.afekago"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqhbN1VUFNFvynPA7ZV6DeGftxW2PGIoA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white">
+
+    <!-- כפתור חזרה -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_back"
+        android:contentDescription="@string/back"
+        android:layout_gravity="start"/>
+
+    <!-- כותרת -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_payment_method"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/green_light"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- תמונת מפה -->
+    <ImageView
+        android:id="@+id/imgMap"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/map_image"
+        android:contentDescription="@string/map_image"/>
+
+    <!-- אמצעי תשלום -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btnCreditCard"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_credit_card"
+            android:contentDescription="@string/credit_card"
+            android:layout_margin="16dp"/>
+
+        <ImageView
+            android:id="@+id/btnBit"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_bit"
+            android:contentDescription="@string/bit"
+            android:layout_margin="16dp"/>
+
+        <ImageView
+            android:id="@+id/btnCash"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_cash"
+            android:contentDescription="@string/cash"
+            android:layout_margin="16dp"/>
+    </LinearLayout>
+</LinearLayout>
