@@ -26,14 +26,15 @@ class NavigationActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
 
-        val driverId = intent.getStringExtra("driverId")
-        val passengerId = intent.getStringExtra("passengerId")
-
-        if (driverId.isNullOrEmpty() || passengerId.isNullOrEmpty()) {
-            Log.e("NavigationActivity", "Missing driverId or passengerId")
+        val firebaseUser = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser
+        val fallbackId = firebaseUser?.uid ?: run {
+            Log.e("NavigationActivity", "No user is logged in")
             finish()
             return
         }
+
+        val driverId = intent.getStringExtra("driverId") ?: fallbackId
+        val passengerId = intent.getStringExtra("passengerId") ?: fallbackId
 
         getDriverLocation(driverId) { driverLoc ->
             driverLoc?.let {
@@ -75,13 +76,17 @@ class NavigationActivity : AppCompatActivity(), OnMapReadyCallback {
                 .color(Color.BLUE)
                 .geodesic(true)
 
-            mMap.addPolyline(polylineOptions)
+            // פתרון לקריסת ה־UI
+            runOnUiThread {
+                mMap.addPolyline(polylineOptions)
 
-            mMap.addMarker(MarkerOptions().position(driverLocation).title("Driver"))
-            mMap.addMarker(MarkerOptions().position(passengerLocation).title("Passenger"))
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(passengerLocation, 12f))
+                mMap.addMarker(MarkerOptions().position(driverLocation).title("Driver"))
+                mMap.addMarker(MarkerOptions().position(passengerLocation).title("Passenger"))
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(passengerLocation, 12f))
+            }
         }
     }
+
 
 
     private fun getDriverLocation(driverId: String, callback: (LatLng?) -> Unit) {

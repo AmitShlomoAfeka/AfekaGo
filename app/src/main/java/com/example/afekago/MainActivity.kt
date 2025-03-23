@@ -86,6 +86,24 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+fun startMockedRide(context: android.content.Context, selectedUser: User) {
+    getCurrentUserData { currentUser ->
+        if (currentUser != null) {
+            val (driverId, passengerId) = if (currentUser.userType == "Driver") {
+                currentUser.id to selectedUser.id
+            } else {
+                selectedUser.id to currentUser.id
+            }
+
+            val intent = Intent(context, NavigationActivity::class.java)
+            intent.putExtra("driverId", driverId)
+            intent.putExtra("passengerId", passengerId)
+            context.startActivity(intent)
+        } else {
+            Toast.makeText(context, "שגיאה: משתמש נוכחי לא אותר", Toast.LENGTH_SHORT).show()
+        }
+    }
+}
 
 @Composable
 fun MainScreen(activity: ComponentActivity, viewModel: DriverViewModel) {
@@ -174,20 +192,17 @@ fun TopBar(
                 )
             }
 
-            // ✅ NEW: Start Ride Icon
             IconButton(onClick = {
-                if (nearbyUsers.isNotEmpty()) {
-                    getCurrentUserData { passenger ->
-                        if (passenger != null) {
-                            val driver = nearbyUsers.first()
-                            val intent = Intent(context, NavigationActivity::class.java)
-                            intent.putExtra("driverId", driver.id)
-                            intent.putExtra("passengerId", passenger.id)
-                            context.startActivity(intent)
-                        }
+                getCurrentUserData { currentUser ->
+                    if (currentUser != null) {
+                        val userId = currentUser.id
+                        val intent = Intent(context, NavigationActivity::class.java)
+                        intent.putExtra("driverId", userId)
+                        intent.putExtra("passengerId", userId)
+                        context.startActivity(intent)
+                    } else {
+                        Toast.makeText(context, "משתמש נוכחי לא נמצא", Toast.LENGTH_SHORT).show()
                     }
-                } else {
-                    Toast.makeText(context, "אין נהגים או נוסעים מתאימים", Toast.LENGTH_SHORT).show()
                 }
             }) {
                 Icon(
@@ -196,6 +211,7 @@ fun TopBar(
                     tint = Color.White
                 )
             }
+
 
             IconButton(onClick = { navigateToSettings() }) {
                 Icon(
@@ -207,7 +223,6 @@ fun TopBar(
         }
     )
 }
-
 
 @Composable
 fun DisplayUsersOnMap(users: List<User>) {
@@ -307,45 +322,18 @@ fun AvailableDriversList(drivers: List<User>, activity: ComponentActivity) {
                 modifier = Modifier
                     .padding(8.dp)
                     .clickable {
-                        Toast
-                            .makeText(context, "הנסיעה אושרה!", Toast.LENGTH_SHORT)
-                            .show()
-
-                        getCurrentUserData { passenger ->
-                            if (passenger != null) {
-                                val intent = Intent(context, NavigationActivity::class.java)
-                                intent.putExtra("driverId", driver.id)
-                                intent.putExtra("passengerId", passenger.id)
-                                context.startActivity(intent)
-                            }
-                        }
+                        Toast.makeText(context, "הנסיעה אושרה!", Toast.LENGTH_SHORT).show()
+                        startMockedRide(context, driver)
                     },
                 colors = CardDefaults.cardColors(containerColor = Color.White)
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Text(
-                        "Driver: ${driver.name}",
-                        style = MaterialTheme.typography.titleMedium
-                    )
-
-                    Text(
-                        "Phone: ${driver.phoneNumber}",
-                        style = MaterialTheme.typography.bodyMedium
-                    )
+                    Text("Driver: ${driver.name}", style = MaterialTheme.typography.titleMedium)
+                    Text("Phone: ${driver.phoneNumber}", style = MaterialTheme.typography.bodyMedium)
 
                     Button(onClick = {
-                        Toast
-                            .makeText(context, "הנסיעה אושרה!", Toast.LENGTH_SHORT)
-                            .show()
-
-                        getCurrentUserData { passenger ->
-                            if (passenger != null) {
-                                val intent = Intent(context, NavigationActivity::class.java)
-                                intent.putExtra("driverId", driver.id)
-                                intent.putExtra("passengerId", passenger.id)
-                                context.startActivity(intent)
-                            }
-                        }
+                        Toast.makeText(context, "הנסיעה אושרה!", Toast.LENGTH_SHORT).show()
+                        startMockedRide(context, driver)
                     }) {
                         Text("Request Ride")
                     }
@@ -354,9 +342,6 @@ fun AvailableDriversList(drivers: List<User>, activity: ComponentActivity) {
         }
     }
 }
-
-
-
 
 @Composable
 fun getUserName(): String {

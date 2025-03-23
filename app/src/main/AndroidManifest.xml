@@ -34,6 +34,9 @@
         <activity android:name=".SettingsActivity" android:exported="true"/>
         <activity android:name=".PlanTripActivity" android:exported="true"/>
         <activity android:name=".AddTripActivity" android:exported="true"/>
+        <activity android:name=".NavigationActivity" android:exported="true"/>
+        <activity android:name=".PaymentMethodActivity" android:exported="true"/>
+        <activity android:name=".PaymentSuccessActivity" android:exported="true"/>
     </application>
 
 </manifest>
