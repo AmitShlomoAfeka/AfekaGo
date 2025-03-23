@@ -81,3 +81,10 @@ AfekaGo/
 
 [AfekaGo_206994824_Amit_Shlomo.pptx](https://github.com/user-attachments/files/19405950/AfekaGo_206994824_Amit_Shlomo.pptx)
 
+
+
+https://github.com/user-attachments/assets/171e04bc-fd29-41ee-9f59-83ab78726af7
+
+
+
+
