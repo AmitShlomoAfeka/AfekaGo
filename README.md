@@ -91,3 +91,8 @@ AfekaGo/
 ├── README.md
 └── presentation/
     └── AfekaGo_206994824_Amit_Shlomo.pptx
+
+
+🎥 מצגת הפרויקט
+📎 לצפייה במצגת הפרויקט :
+[AfekaGo_206994824_Amit_Shlomo.pptx](https://github.com/user-attachments/files/19636849/AfekaGo_206994824_Amit_Shlomo.pptx)
