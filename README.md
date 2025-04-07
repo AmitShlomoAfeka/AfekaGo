@@ -95,4 +95,4 @@ AfekaGo/
 
 🎥 מצגת הפרויקט
 📎 לצפייה במצגת הפרויקט :
-[AfekaGo_206994824_Amit_Shlomo.pptx](https://github.com/user-attachments/files/19636849/AfekaGo_206994824_Amit_Shlomo.pptx)
+https://github.com/AmitShlomoAfeka/AfekaGo/blob/master/AfekaGo_206994824_Amit_Shlomo.pptx
