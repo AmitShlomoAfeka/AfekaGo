@@ -93,7 +93,9 @@ AfekaGo/
     └── AfekaGo_206994824_Amit_Shlomo.pptx
 
 
-🎥 מצגת הפרויקט
-📎 לצפייה במצגת הפרויקט :
+## 🎥 Project Presentation
 
-👉 [לחצי כאן להורדת המצגת (AfekaGo_206994824_Amit_Shlomo.pptx)](https://github.com/AmitShlomoAfeka/AfekaGo/blob/master/AfekaGo_206994824_Amit_Shlomo.pptx)
+📎 The presentation includes a detailed overview, app structure, and demo videos.
+
+👉 [Click here to view and download the presentation (AfekaGo_206994824_Amit_Shlomo.pptx)](https://github.com/AmitShlomoAfeka/AfekaGo/blob/master/presentation/AfekaGo_206994824_Amit_Shlomo.pptx)
+
